@@ -15,15 +15,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var urlImg: [[String: Any]] = []
     var posts: [[String: Any]] = []
-    var imageLink = [String]()
+   // var imageLink = [String]()
+    
+    var refreshControl: UIRefreshControl!
+    
  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(ViewController.didPullToRefresh), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
         fetchPic()
-        
+    }
+    
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
+        fetchPic()
     }
 
     func fetchPic(){
@@ -39,6 +48,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // Store the returned array of dictionaries in our posts property
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }
         task.resume()
