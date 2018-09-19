@@ -29,15 +29,18 @@ class PhotoDetailsVC: UIViewController {
             imageView.af_setImage(withURL: url!)
         }
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PhotoDetailsVC.imageTapped(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
     }
-
     
-    
-    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        performSegue(withIdentifier: "goToFullScreenVC", sender: tappedImage)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }

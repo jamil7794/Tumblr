@@ -46,7 +46,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imgView" destination="sFf-qu-o2m" id="dqh-ae-rmo"/>
-                                            <segue destination="fqc-bI-5Av" kind="show" id="J6o-vC-npz"/>
+                                            <segue destination="fqc-bI-5Av" kind="show" id="ac9-ke-Nz9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -87,9 +87,13 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bhx-BW-V6p">
                                 <rect key="frame" x="0.0" y="88" width="375" height="284"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="284" id="HHa-k2-gDT"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sxA-7A-tzJ" appends="YES" id="iXj-ym-rS0"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,8 +109,46 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58Y-mF-unG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sxA-7A-tzJ">
+                    <connections>
+                        <segue destination="Xup-bp-etD" kind="presentation" identifier="goToFullScreenVC" id="VR4-Vm-vS8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1844" y="132.26600985221674"/>
+        </scene>
+        <!--Full Screen PhotoVC-->
+        <scene sceneID="CSq-Ok-ehk">
+            <objects>
+                <viewController id="Xup-bp-etD" customClass="FullScreenPhotoVC" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x6i-6Q-2PX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NhQ-Zo-5Pb">
+                                <rect key="frame" x="0.0" y="44" width="375" height="351"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="351" id="9Br-d3-0vE"/>
+                                    <constraint firstAttribute="width" constant="375" id="RG2-TQ-1Zd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NhQ-Zo-5Pb" firstAttribute="leading" secondItem="UUd-Rf-l4v" secondAttribute="leading" id="1Df-4V-pI7"/>
+                            <constraint firstItem="NhQ-Zo-5Pb" firstAttribute="top" secondItem="UUd-Rf-l4v" secondAttribute="top" id="hLC-Ab-noZ"/>
+                            <constraint firstItem="NhQ-Zo-5Pb" firstAttribute="trailing" secondItem="UUd-Rf-l4v" secondAttribute="trailing" id="yCA-tB-4yt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UUd-Rf-l4v"/>
+                    </view>
+                    <connections>
+                        <outlet property="fullScreenPic" destination="NhQ-Zo-5Pb" id="NRG-3w-yQJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h63-eE-ygZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2616.8000000000002" y="132.26600985221674"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EkK-xN-Mni">
