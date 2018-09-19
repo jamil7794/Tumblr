@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
-    var urlImg: [[String: Any]] = []
     var posts: [[String: Any]] = []
     let alertController = UIAlertController(title: "Error", message: "Connect to the Internet", preferredStyle: .alert)
     var refreshControl: UIRefreshControl!
@@ -84,6 +83,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let pic = posts[indexPath.row]
+            let photoDetailsVC = segue.destination as! PhotoDetailsVC
+            photoDetailsVC.pics = pic
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

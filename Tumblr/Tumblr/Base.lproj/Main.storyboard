@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q7b-9O-kvj">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tumblr-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,26 +30,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sFf-qu-o2m">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="256.66666666666669"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="375" id="2k4-hz-fU2"/>
-                                                        <constraint firstAttribute="height" constant="257" id="A2z-NC-kfH"/>
+                                                        <constraint firstAttribute="height" constant="256.67000000000002" id="hLX-7S-uRd"/>
+                                                        <constraint firstAttribute="width" constant="375" id="zZI-pC-SGE"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sFf-qu-o2m" firstAttribute="leading" secondItem="WEX-wE-T7P" secondAttribute="leading" id="31X-ao-jft"/>
-                                                <constraint firstAttribute="trailing" secondItem="sFf-qu-o2m" secondAttribute="trailing" id="8dZ-rW-sL6"/>
-                                                <constraint firstAttribute="bottom" secondItem="sFf-qu-o2m" secondAttribute="bottom" id="Lx7-8t-p8R"/>
-                                                <constraint firstItem="sFf-qu-o2m" firstAttribute="top" secondItem="WEX-wE-T7P" secondAttribute="top" id="VNn-EZ-lAu"/>
-                                                <constraint firstItem="sFf-qu-o2m" firstAttribute="leading" secondItem="WEX-wE-T7P" secondAttribute="leading" id="lyF-Gt-wx7"/>
-                                                <constraint firstItem="sFf-qu-o2m" firstAttribute="top" secondItem="WEX-wE-T7P" secondAttribute="top" id="mDK-9T-M0L"/>
-                                                <constraint firstAttribute="bottom" secondItem="sFf-qu-o2m" secondAttribute="bottom" id="o2H-qc-azl"/>
-                                                <constraint firstAttribute="trailing" secondItem="sFf-qu-o2m" secondAttribute="trailing" id="tJp-sl-zFw"/>
+                                                <constraint firstItem="sFf-qu-o2m" firstAttribute="leading" secondItem="WEX-wE-T7P" secondAttribute="leading" id="Yhd-K5-vJn"/>
+                                                <constraint firstAttribute="trailing" secondItem="sFf-qu-o2m" secondAttribute="trailing" id="cgf-ow-geJ"/>
+                                                <constraint firstItem="sFf-qu-o2m" firstAttribute="top" secondItem="WEX-wE-T7P" secondAttribute="top" id="qsj-22-2s4"/>
+                                                <constraint firstAttribute="bottom" secondItem="sFf-qu-o2m" secondAttribute="bottom" id="wWo-qf-tnr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imgView" destination="sFf-qu-o2m" id="dqh-ae-rmo"/>
+                                            <segue destination="fqc-bI-5Av" kind="show" id="J6o-vC-npz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -70,12 +67,62 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Tumblr" id="ScZ-Hi-zcS"/>
                     <connections>
                         <outlet property="activityIndicator" destination="3t6-um-emD" id="ykJ-fR-Ulj"/>
                         <outlet property="tableView" destination="TqT-B7-LFt" id="EBD-Va-2a5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="133.00492610837438"/>
+        </scene>
+        <!--Photo DetailsVC-->
+        <scene sceneID="2B5-hv-VYm">
+            <objects>
+                <viewController id="fqc-bI-5Av" customClass="PhotoDetailsVC" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5NJ-as-kDG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bhx-BW-V6p">
+                                <rect key="frame" x="0.0" y="88" width="375" height="284"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="284" id="HHa-k2-gDT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bhx-BW-V6p" firstAttribute="leading" secondItem="cvD-aq-fzd" secondAttribute="leading" id="86J-GB-tkm"/>
+                            <constraint firstItem="bhx-BW-V6p" firstAttribute="trailing" secondItem="cvD-aq-fzd" secondAttribute="trailing" id="m58-07-mWt"/>
+                            <constraint firstItem="bhx-BW-V6p" firstAttribute="top" secondItem="cvD-aq-fzd" secondAttribute="top" id="mcW-K9-aWP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cvD-aq-fzd"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="bhx-BW-V6p" id="5xc-cb-8sv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58Y-mF-unG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="132.26600985221674"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EkK-xN-Mni">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7b-9O-kvj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q6O-cY-jcG">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2Q1-lI-0gl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tsy-98-0iS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>
