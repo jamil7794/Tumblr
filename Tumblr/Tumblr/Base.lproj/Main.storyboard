@@ -125,14 +125,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NhQ-Zo-5Pb">
-                                <rect key="frame" x="0.0" y="74" width="375" height="372"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="1Uf-Hb-qu1"/>
-                                    <constraint firstAttribute="height" constant="372" id="g8D-s0-WOK"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvK-V4-aLp">
                                 <rect key="frame" x="0.0" y="44" width="46" height="30"/>
                                 <constraints>
@@ -144,20 +136,39 @@
                                     <action selector="closeBtn:" destination="Xup-bp-etD" eventType="touchUpInside" id="lfx-DC-GJ2"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="np5-cI-zgm">
+                                <rect key="frame" x="0.0" y="82" width="375" height="648"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lLi-Ty-zES">
+                                        <rect key="frame" x="0.0" y="8" width="367" height="310"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="310" id="dgW-ZW-pRW"/>
+                                            <constraint firstAttribute="width" constant="367" id="ekk-Nr-NZB"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lLi-Ty-zES" firstAttribute="leading" secondItem="np5-cI-zgm" secondAttribute="leading" id="Lxh-8J-npq"/>
+                                    <constraint firstItem="lLi-Ty-zES" firstAttribute="top" secondItem="np5-cI-zgm" secondAttribute="top" constant="8" id="k1k-y1-ACQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="lLi-Ty-zES" secondAttribute="trailing" constant="8" id="rb1-He-hIS"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IvK-V4-aLp" firstAttribute="leading" secondItem="UUd-Rf-l4v" secondAttribute="leading" id="8Qq-Gq-C2L"/>
+                            <constraint firstItem="np5-cI-zgm" firstAttribute="leading" secondItem="UUd-Rf-l4v" secondAttribute="leading" id="9JD-kf-9h5"/>
                             <constraint firstItem="IvK-V4-aLp" firstAttribute="top" secondItem="UUd-Rf-l4v" secondAttribute="top" id="Hfc-fo-czF"/>
-                            <constraint firstItem="NhQ-Zo-5Pb" firstAttribute="trailing" secondItem="UUd-Rf-l4v" secondAttribute="trailing" id="NLE-fk-Jrm"/>
-                            <constraint firstItem="NhQ-Zo-5Pb" firstAttribute="leading" secondItem="UUd-Rf-l4v" secondAttribute="leading" id="Pkz-5S-8SJ"/>
-                            <constraint firstItem="NhQ-Zo-5Pb" firstAttribute="top" secondItem="IvK-V4-aLp" secondAttribute="bottom" id="Uhg-Db-UEg"/>
-                            <constraint firstItem="NhQ-Zo-5Pb" firstAttribute="top" secondItem="IvK-V4-aLp" secondAttribute="bottom" id="Zr9-2X-TIk"/>
+                            <constraint firstItem="np5-cI-zgm" firstAttribute="centerX" secondItem="x6i-6Q-2PX" secondAttribute="centerX" id="MiA-bH-B24"/>
+                            <constraint firstItem="np5-cI-zgm" firstAttribute="centerY" secondItem="x6i-6Q-2PX" secondAttribute="centerY" id="fqU-VS-tW9"/>
+                            <constraint firstItem="np5-cI-zgm" firstAttribute="trailing" secondItem="UUd-Rf-l4v" secondAttribute="trailing" id="sjD-QD-tOe"/>
+                            <constraint firstItem="np5-cI-zgm" firstAttribute="top" secondItem="IvK-V4-aLp" secondAttribute="bottom" constant="8" id="uaw-AS-bwo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UUd-Rf-l4v"/>
                     </view>
                     <connections>
-                        <outlet property="fullScreenPic" destination="NhQ-Zo-5Pb" id="NRG-3w-yQJ"/>
+                        <outlet property="imageView" destination="lLi-Ty-zES" id="653-IT-IVL"/>
+                        <outlet property="scrollView" destination="np5-cI-zgm" id="bHv-9y-0d2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h63-eE-ygZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
