@@ -15,21 +15,23 @@ class FullScreenPhotoVC: UIViewController {
     @IBOutlet weak var fullScreenPic: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if let photos = pic["photos"] as? [[String: Any]] {
-//            // photos is NOT nil, we can use it!
-//            // TODO: Get the photo url
-//            let photo = photos[0]
-//            // 2.
-//            let originalSize = photo["original_size"] as! [String: Any]
-//            // 3.
-//            let urlString = originalSize["url"] as! String
-//            // 4.
-//            let url = URL(string: urlString)
-//            fullScreenPic.af_setImage(withURL: url!)
-//        }
+        if let photos = pic["photos"] as? [[String: Any]] {
+            // photos is NOT nil, we can use it!
+            // TODO: Get the photo url
+            let photo = photos[0]
+            // 2.
+            let originalSize = photo["original_size"] as! [String: Any]
+            // 3.
+            let urlString = originalSize["url"] as! String
+            // 4.
+            let url = URL(string: urlString)
+            fullScreenPic.af_setImage(withURL: url!)
+       }
         
     }
-
+    
+    @IBAction func closeBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }

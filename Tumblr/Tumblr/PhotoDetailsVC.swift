@@ -39,6 +39,11 @@ class PhotoDetailsVC: UIViewController {
         performSegue(withIdentifier: "goToFullScreenVC", sender: tappedImage)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let fullScreenVC = segue.destination as! FullScreenPhotoVC
+        fullScreenVC.pic = pics
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -134,8 +134,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let pic = posts[indexPath.section]
             let photoDetailsVC = segue.destination as! PhotoDetailsVC
             photoDetailsVC.pics = pic
-            let fullScreenVC = FullScreenPhotoVC()
-            fullScreenVC.pic = pic
         }
     }
     
