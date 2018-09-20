@@ -61,6 +61,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.tableView.reloadData()
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
+                print(self.posts.count)
             }
         }
         task.resume()
